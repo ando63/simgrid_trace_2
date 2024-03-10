@@ -32,7 +32,7 @@ router = """  <router id='s{0}'/>
 """
 
 
-link_router_router = """  <link id='links{0}s{1}' bandwidth='50000000000.0' latency='0.5e-06'/>
+link_router_router = """  <link id='links{0}s{1}' bandwidth='500.0' latency='0.5e-03'/>
 """
 
 route_node_router = """  <route src='n{0}' dst='s{0}'>
