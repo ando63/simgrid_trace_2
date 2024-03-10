@@ -146,10 +146,10 @@ if __name__ == "__main__":
             #r = math.ceil(n / npr)
             f.write(route_node_router.format(n))
             
-        for i,j in edgeslist:
+        for i,j in edgelist:
             f.write(route_router_router.format(i,j))
 
-        for r1, r2 in edgeslist_cs:
+        for r1, r2 in edgelist_cs:
             if (r1, r2) not in edgelist:
                 f.write(route_router_router_cs.format(r1,r2))
             
