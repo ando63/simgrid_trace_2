@@ -151,6 +151,7 @@ if __name__ == "__main__":
 
         for r1, r2 in edgelist_cs:
             if (r1-1, r2-1) not in edgelist:
-                f.write(route_router_router_cs.format(r1,r2))
+                if (r2-1, r1-1) not in edgelist:
+                    f.write(route_router_router_cs.format(r1,r2))
             
         f.write(footer)
