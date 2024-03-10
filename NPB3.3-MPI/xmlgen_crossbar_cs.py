@@ -87,7 +87,7 @@ if __name__ == "__main__":
     #G = nx.Graph()
     #G.add_nodes_from([1])
     #G = nx.read_edgelist(edge)
-    G = nx.grid_graph(4,4)
+    G = nx.grid_2d_graph(4,4)
     nodes = sorted(list(G.nodes))
     mapping = {e:i for i,e in enumerate(nodes)}
     G = nx.relabel_nodes(G, mapping)
