@@ -140,17 +140,17 @@ if __name__ == "__main__":
             f.write(router.format(r))
 
         for r1, r2 in edgelist:
-            f.write(link_router_router.format(r1, r2))
+            f.write(link_router_router.format(r1+1, r2+1))
 
         for n in nodelist:
             #r = math.ceil(n / npr)
             f.write(route_node_router.format(n))
             
         for i,j in edgelist:
-            f.write(route_router_router.format(i,j))
+            f.write(route_router_router.format(i+1,j+1))
 
         for r1, r2 in edgelist_cs:
-            if (r1, r2) not in edgelist:
+            if (r1-1, r2-1) not in edgelist:
                 f.write(route_router_router_cs.format(r1,r2))
             
         f.write(footer)
