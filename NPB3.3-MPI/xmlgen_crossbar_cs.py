@@ -99,6 +99,7 @@ if __name__ == "__main__":
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
     n_routers = len(G.nodes())
     n_nodes = n_routers #* npr
+    print(n_nodes)
     edgelist = list(G.edges())
     routerlist = list(G.nodes())
     nodelist = list(range(1, n_nodes+1))
