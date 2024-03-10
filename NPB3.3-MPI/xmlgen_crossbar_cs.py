@@ -101,6 +101,7 @@ if __name__ == "__main__":
     n_nodes = n_routers #* npr
     print(n_nodes)
     edgelist = list(G.edges())
+    edgelist_cs = list(G_cs.edges())
     routerlist = list(G.nodes())
     nodelist = list(range(1, n_nodes+1))
     
@@ -127,29 +128,29 @@ if __name__ == "__main__":
     with open(os.path.join(out_dir, out_xml), "w") as f:
         f.write(header)
         
-        for n in range(n_nodes):
+        for n in nodelist:
             #r = math.ceil(n / npr)
             f.write(node.format(n))
             f.write(link_node_router.format(n))
 
-        for i,j in G_cs.edges:
+        for i,j in edgelist_cs:
             f.write(link_router_ls.format(i,j))
 
-        for r in range(n_nodes):
+        for r in nodelist:
             f.write(router.format(r))
 
-        for r1, r2 in G.edges:
+        for r1, r2 in edgelist:
             f.write(link_router_router.format(r1, r2))
 
-        for n in range(n_nodes):
+        for n in nodelist:
             #r = math.ceil(n / npr)
             f.write(route_node_router.format(n))
             
-        for i,j in G.edges:
+        for i,j in edgeslist:
             f.write(route_router_router.format(i,j))
 
-        for r1, r2 in G_cs.edges:
-            if not G.has_edge(r1,r2):
+        for r1, r2 in edgeslist_cs:
+            if (r1, r2) not in edgelist:
                 f.write(route_router_router_cs.format(r1,r2))
             
         f.write(footer)
