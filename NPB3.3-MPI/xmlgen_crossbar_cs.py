@@ -149,6 +149,7 @@ if __name__ == "__main__":
             f.write(route_router_router.format(i,j))
 
         for r1, r2 in G_cs.edges:
-            f.write(route_router_router_cs.format(r1,r2))
+            if not G.has_edge(r1,r2):
+                f.write(route_router_router_cs.format(r1,r2))
             
         f.write(footer)
