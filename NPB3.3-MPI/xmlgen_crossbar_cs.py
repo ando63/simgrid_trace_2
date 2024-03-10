@@ -84,7 +84,7 @@ if __name__ == "__main__":
     # print(header)
     # print(link_node_router.format(0, 1, 2))
 
-    G = nx.Graph()
+    #G = nx.Graph()
     #G.add_nodes_from([1])
     #G = nx.read_edgelist(edge)
     G = nx.grid_graph(4,4)
