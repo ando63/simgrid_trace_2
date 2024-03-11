@@ -19,7 +19,7 @@ header = """<?xml version='1.0'?>
  <AS id='AS0' routing='Floyd'>
 """
 
-node = """  <host id='n{0}' speed='100000.0'/>
+node = """  <host id='n{0}' speed='100000000000.0' core='{0}'/>
 """
 
 link_node_router = """  <link id='linkn{0}s{0}' bandwidth='50000000000.0' latency='0.5e-06'/>
@@ -32,7 +32,7 @@ router = """  <router id='s{0}'/>
 """
 
 
-link_router_router = """  <link id='links{0}s{1}' bandwidth='500.0' latency='0.5e-03'/>
+link_router_router = """  <link id='links{0}s{1}' bandwidth='50000000000.0' latency='0.5e-06'/>
 """
 
 route_node_router = """  <route src='n{0}' dst='s{0}'>
