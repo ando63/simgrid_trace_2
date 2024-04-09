@@ -46,7 +46,7 @@ route_node_router = """  <route src='n{0}' dst='s{0}'>
 """
 
 route_node_router_cs = """  <route src='n{0}' dst='cs{0}'>
-   <link_ctn id='link'n{0}cs{0}'/>
+   <link_ctn id='linkn{0}cs{0}'/>
   </route>
 """
 
