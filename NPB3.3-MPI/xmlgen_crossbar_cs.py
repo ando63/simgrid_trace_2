@@ -25,12 +25,17 @@ node = """  <host id='n{0}' speed='200000000000.0' core='1'/>
 link_node_router = """  <link id='linkn{0}s{0}' bandwidth='500000000000.0' latency='0.5e-07'/>
 """
 
+link_node_router_cs = """  <link id='linkn{0}cs{0}' bandwidth='500000000000.0' latency='0.5e-07'/>
+"""
+
 link_router_ls = """  <link id='cs{0}-{1}' bandwidth='200000000000.0' latency='0.5e-08'/>
 """
 
 router = """  <router id='s{0}'/>
 """
 
+router_cs = """  <touter id='cs{0}'/>
+"""
 
 link_router_router = """  <link id='links{0}s{1}' bandwidth='50000000000.0' latency='0.5e-06'/>
 """
@@ -40,12 +45,17 @@ route_node_router = """  <route src='n{0}' dst='s{0}'>
   </route>
 """
 
+route_node_router_cs = """  <route src='n{0}' dst='cs{0}'>
+   <link_ctn id='link'n{0}cs{0}'/>
+  </route>
+"""
+
 route_router_router = """  <route src='s{0}' dst='s{1}'>
    <link_ctn id='links{0}s{1}'/>
   </route>
 """
 
-route_router_router_cs = """  <route src='s{0}' dst='s{1}'>
+route_router_router_cs = """  <route src='cs{0}' dst='cs{1}'>
    <link_ctn id='cs{0}-{1}'/>
   </route>
 """
@@ -132,12 +142,14 @@ if __name__ == "__main__":
             #r = math.ceil(n / npr)
             f.write(node.format(n))
             f.write(link_node_router.format(n))
+            f.write(link_node_router_cs.format(n))
 
         for i,j in edgelist_cs:
             f.write(link_router_ls.format(i,j))
 
         for r in nodelist:
             f.write(router.format(r))
+            f.write(router_cs.format(r))
 
         for r1, r2 in edgelist:
             f.write(link_router_router.format(r1+1, r2+1))
@@ -150,8 +162,8 @@ if __name__ == "__main__":
             f.write(route_router_router.format(i+1,j+1))
 
         for r1, r2 in edgelist_cs:
-            if (r1-1, r2-1) not in edgelist:
-                if (r2-1, r1-1) not in edgelist:
-                    f.write(route_router_router_cs.format(r1,r2))
+            #if (r1-1, r2-1) not in edgelist:
+            #if (r2-1, r1-1) not in edgelist:
+            f.write(route_router_router_cs.format(r1,r2))
             
         f.write(footer)
