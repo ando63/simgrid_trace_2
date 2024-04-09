@@ -16,7 +16,7 @@ header = """<?xml version='1.0'?>
   <prop id='smpi/coll_selector' value='mvapich2'/>
   <prop id='smpi/cpu_threshold' value='0.00000001'/>
  </config>
- <AS id='AS0' routing='Dijkstra'>
+ <AS id='AS0' routing='Vivaldi'>
 """
 
 node = """  <host id='n{0}' speed='200000000000.0' core='1'/>
