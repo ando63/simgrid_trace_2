@@ -157,6 +157,7 @@ if __name__ == "__main__":
         for n in nodelist:
             #r = math.ceil(n / npr)
             f.write(route_node_router.format(n))
+            f.write(route_node_router_cs.format(n))
             
         for i,j in edgelist:
             f.write(route_router_router.format(i+1,j+1))
