@@ -34,7 +34,7 @@ link_router_ls = """  <link id='cs{0}-{1}' bandwidth='200000000000.0' latency='0
 router = """  <router id='s{0}'/>
 """
 
-router_cs = """  <touter id='cs{0}'/>
+router_cs = """  <router id='cs{0}'/>
 """
 
 link_router_router = """  <link id='links{0}s{1}' bandwidth='50000000000.0' latency='0.5e-06'/>
