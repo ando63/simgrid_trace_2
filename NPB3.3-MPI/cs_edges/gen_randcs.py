@@ -37,10 +37,9 @@ def generate_random_IO_matching(graph, seed):
                     i=0
                     break
             flag = False
-    print(nodes_1)
-    print(nodes_2)
     i=0
     matching_edges = [(nodes_1[i], nodes_2[i]) for i in range(0, len(nodes_1))]
+    print(matching_edges)
     matching_graph = nx.Graph()
     matching_graph.add_edges_from(matching_edges)
     return matching_graph
