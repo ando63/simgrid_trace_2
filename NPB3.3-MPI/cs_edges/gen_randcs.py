@@ -23,7 +23,7 @@ def generate_random_IO_matching(gragh, seed):
     while flag:
         for i in range(0, len(nodes_1)):
             if (nodes_1[i] == nodes_2[i]):
-                if (i+1 == len(node_1))
+                if (i+1 == len(node_1)):
                     swap = nodes_2[i] 
                     nodes_2[i] = nodes_2[0]
                     nodes_2[0] = swap
