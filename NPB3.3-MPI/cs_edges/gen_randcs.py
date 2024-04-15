@@ -43,6 +43,7 @@ def generate_random_IO_matching(graph, seed):
     matching_graph = nx.Graph()
     matching_graph.add_edges_from(matching_edges)
     print(matching_graph)
+    print("1")
     return matching_graph
 
 def gen_randcs(n_nodes, seed):
