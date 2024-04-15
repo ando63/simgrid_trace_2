@@ -55,7 +55,7 @@ route_router_router = """  <route src='s{0}' dst='s{1}'>
   </route>
 """
 
-route_router_router_cs = """  <route src='s{0}' dst='s{1}'>
+route_router_router_cs = """  <route src='s{0}' dst='s{1}' symmetrical='NO'>
    <link_ctn id='cs{0}-{1}'/>
   </route>
 """
