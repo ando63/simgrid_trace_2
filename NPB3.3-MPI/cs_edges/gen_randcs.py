@@ -15,8 +15,8 @@ def generate_random_perfect_matching(graph, seed):
 def generate_random_IO_matching(graph, seed):
     rs_1 = np.random.RandomState(seed)
     rs_2 = np.random.RandomState(seed + 1000)
-    nodes_1 = list(graph.nodes)
-    nodes_2 = list(graph.nodes)
+    nodes_1 = list(graph.nodes())
+    nodes_2 = list(graph.nodes())
     rs_1.shuffle(nodes_1)
     rs_2.shuffle(nodes_2)
     flag = True
