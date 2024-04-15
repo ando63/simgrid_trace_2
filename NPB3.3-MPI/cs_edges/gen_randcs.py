@@ -19,6 +19,8 @@ def generate_random_IO_matching(graph, seed):
     nodes_2 = list(graph.nodes())
     rs_1.shuffle(nodes_1)
     rs_2.shuffle(nodes_2)
+    print(nodes_1)
+    print(nodes_2)
     flag = True
     i=0
     while flag:
@@ -41,12 +43,9 @@ def generate_random_IO_matching(graph, seed):
     matching_edges = [(nodes_1[i], nodes_2[i]) for i in range(0, len(nodes_1))]
     print(matching_edges)
     matching_graph = nx.DiGraph()
-    print(matching_graph.edges)
     #matching_graph.add_edges_from(matching_edges)
     for node_1, node_2 in zip(nodes_1, nodes_2):
         matching_graph.add_edge(node_1, node_2)
-    print(matching_graph.edges)
-    print("1")
     return matching_graph
 
 def gen_randcs(n_nodes, seed):
