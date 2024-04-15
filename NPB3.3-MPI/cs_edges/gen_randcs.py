@@ -19,6 +19,8 @@ def generate_random_IO_matching(graph, seed):
     nodes_2 = list(graph.nodes)
     rs_1.shuffle(nodes_1)
     rs_2.shuffle(nodes_2)
+    print(nodes_1)
+    print(nodes_2)
     flag = False
     while flag:
         for i in range(0, len(nodes_1)):
