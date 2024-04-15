@@ -16,7 +16,7 @@ header = """<?xml version='1.0'?>
   <prop id='smpi/coll_selector' value='mvapich2'/>
   <prop id='smpi/cpu_threshold' value='0.00000001'/>
  </config>
- <AS id='AS0' routing='DijkstraCache'>
+ <AS id='AS0' routing='Floyd'>
 """
 
 node = """  <host id='n{0}' speed='200000000000.0' core='1'/>
@@ -25,8 +25,8 @@ node = """  <host id='n{0}' speed='200000000000.0' core='1'/>
 link_node_router = """  <link id='linkn{0}s{0}' bandwidth='5000000000000.0' latency='0.5e-08'/>
 """
 
-link_node_router_cs = """  <link id='linkn{0}cs{0}' bandwidth='5000000000000.0' latency='0.5e-08'/>
-"""
+#link_node_router_cs = """  <link id='linkn{0}cs{0}' bandwidth='5000000000000.0' latency='0.5e-08'/>
+#"""
 
 link_router_ls = """  <link id='cs{0}-{1}' bandwidth='200000000000.0' latency='0.5e-08'/>
 """
@@ -34,8 +34,8 @@ link_router_ls = """  <link id='cs{0}-{1}' bandwidth='200000000000.0' latency='0
 router = """  <router id='s{0}'/>
 """
 
-router_cs = """  <router id='cs{0}'/>
-"""
+#router_cs = """  <router id='cs{0}'/>
+#"""
 
 link_router_router = """  <link id='links{0}s{1}' bandwidth='50000000000.0' latency='0.5e-06'/>
 """
@@ -142,14 +142,14 @@ if __name__ == "__main__":
             #r = math.ceil(n / npr)
             f.write(node.format(n))
             f.write(link_node_router.format(n))
-            f.write(link_node_router_cs.format(n))
+            #f.write(link_node_router_cs.format(n))
 
         for i,j in edgelist_cs:
             f.write(link_router_ls.format(i,j))
 
         for r in nodelist:
             f.write(router.format(r))
-            f.write(router_cs.format(r))
+            #f.write(router_cs.format(r))
 
         for r1, r2 in edgelist:
             f.write(link_router_router.format(r1+1, r2+1))
@@ -157,14 +157,14 @@ if __name__ == "__main__":
         for n in nodelist:
             #r = math.ceil(n / npr)
             f.write(route_node_router.format(n))
-            f.write(route_node_router_cs.format(n))
+            #f.write(route_node_router_cs.format(n))
             
         for i,j in edgelist:
             f.write(route_router_router.format(i+1,j+1))
 
         for r1, r2 in edgelist_cs:
-            #if (r1-1, r2-1) not in edgelist:
-            #if (r2-1, r1-1) not in edgelist:
-            f.write(route_router_router_cs.format(r1,r2))
+            if (r1-1, r2-1) not in edgelist:
+             if (r2-1, r1-1) not in edgelist:
+              f.write(route_router_router_cs.format(r1,r2))
             
         f.write(footer)
