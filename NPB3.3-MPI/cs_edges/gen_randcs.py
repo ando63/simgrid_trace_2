@@ -12,11 +12,11 @@ def generate_random_perfect_matching(graph, seed):
     matching_graph.add_edges_from(matching_edges)
     return matching_graph
 
-def generate_random_IO_matching(gragh, seed):
+def generate_random_IO_matching(graph, seed):
     rs_1 = np.random.RandomState(seed)
     rs_2 = np.random.RandomState(seed + 1000)
-    nodes_1 = list(gragh.nodes)
-    nodes_2 = list(gragh.nodes)
+    nodes_1 = list(graph.nodes)
+    nodes_2 = list(graph.nodes)
     rs_1.shuffle(nodes_1)
     rs_2.shuffle(nodes_2)
     flag = False
@@ -38,9 +38,9 @@ def generate_random_IO_matching(gragh, seed):
             flag = True
     
     matching_edges = [(nodes_1[i], nodes_2[i]) for i in range(0, len(nodes_1))]
-    matching_gragh = nx.Gragh()
-    matching_gragh.add_edges_from(matching_edges)
-    return matching_gragh
+    matching_graph = nx.Graph()
+    matching_graph.add_edges_from(matching_edges)
+    return matching_graph
 
 def gen_randcs(n_nodes, seed):
     complete_graph = nx.complete_graph(n_nodes)
