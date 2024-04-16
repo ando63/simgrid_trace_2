@@ -103,7 +103,7 @@ if __name__ == "__main__":
     G = nx.relabel_nodes(G, mapping)
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
     
-    G_cs = nx.read_edgelist(os.path.join(cs_dir, cs_file), nodetype=int, data=False)
+    G_cs = nx.read_edgelist(os.path.join(cs_dir, cs_file), nodetype=int, data=False, create_using=nx.DiGraph())
     n_nodes = 16
     
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
