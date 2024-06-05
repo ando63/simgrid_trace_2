@@ -119,9 +119,9 @@ if __name__ == "__main__":
 
     # パラメータ設定
     groups = 8  # グループの数
-    routers_per_group = 3  # 各グループ内のルーター数
-    intra_group_links = 3  # グループ内の接続数
-    inter_group_links = 3  # グループ間の接続数
+    routers_per_group = 8  # 各グループ内のルーター数
+    intra_group_links = 8  # グループ内の接続数
+    inter_group_links = 8  # グループ間の接続数
     
     # ドラゴンフライトポロジーの作成
     G = create_dragonfly_topology(groups, routers_per_group, intra_group_links, inter_group_links)
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
     
     G_cs = nx.read_edgelist(os.path.join(cs_dir, cs_file), nodetype=int, data=False, create_using=nx.DiGraph())
-    n_nodes = 24
+    n_nodes = 64
     
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
     n_routers = len(G.nodes())
