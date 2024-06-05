@@ -14,12 +14,12 @@
 # No blank lines. 
 # The following example builds 1 processor sample sizes of all benchmarks. 
 
-ft	B	24
-mg	B	24
-sp	B	24
-lu	B	24
-bt	B	24
-is	B	24
-ep	B	24
-cg	B	24
-dt	B	24
+ft	W	24
+mg	W	24
+sp	W	24
+lu	W	24
+bt	W	24
+is	W	24
+ep	W	24
+cg	W	24
+dt	W	24
