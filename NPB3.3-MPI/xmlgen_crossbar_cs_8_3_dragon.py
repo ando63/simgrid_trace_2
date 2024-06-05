@@ -70,6 +70,25 @@ import networkx as nx
 import math
 import argparse
 
+def create_dragonfly_topology(groups, routers_per_group, intra_group_links, inter_group_links):
+    G = nx.Graph()
+    
+    # Add nodes (routers) and intra-group edges (links within a group)
+    for g in range(groups):
+        for r in range(routers_per_group):
+            G.add_node((g, r), group=g, router=r)
+            for i in range(1, intra_group_links + 1):
+                if r + i < routers_per_group:
+                    G.add_edge((g, r), (g, r + i))
+    
+    # Add inter-group edges (links between groups)
+    for g1 in range(groups):
+        for g2 in range(g1 + 1, groups):
+            for r in range(inter_group_links):
+                G.add_edge((g1, r), (g2, r))
+    
+    return G
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process an integer.")
     #parser.add_argument("integer", metavar="npr", type=int, help="# of processes per router")
@@ -97,14 +116,23 @@ if __name__ == "__main__":
     #G = nx.Graph()
     #G.add_nodes_from([1])
     #G = nx.read_edgelist(edge)
-    G = nx.grid_2d_graph(4,4)
+
+    # パラメータ設定
+    groups = 8  # グループの数
+    routers_per_group = 3  # 各グループ内のルーター数
+    intra_group_links = 3  # グループ内の接続数
+    inter_group_links = 3  # グループ間の接続数
+    
+    # ドラゴンフライトポロジーの作成
+    G = create_dragonfly_topology(groups, routers_per_group, intra_group_links, inter_group_links)
+
     nodes = sorted(list(G.nodes))
     mapping = {e:i for i,e in enumerate(nodes)}
     G = nx.relabel_nodes(G, mapping)
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
     
     G_cs = nx.read_edgelist(os.path.join(cs_dir, cs_file), nodetype=int, data=False, create_using=nx.DiGraph())
-    n_nodes = 16
+    n_nodes = 24
     
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
     n_routers = len(G.nodes())
