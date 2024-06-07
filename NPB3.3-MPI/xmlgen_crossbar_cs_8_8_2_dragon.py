@@ -132,7 +132,7 @@ if __name__ == "__main__":
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
     
     G_cs = nx.read_edgelist(os.path.join(cs_dir, cs_file), nodetype=int, data=False, create_using=nx.DiGraph())
-    n_nodes = 128
+    n_nodes = 64
     
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
     n_routers = len(G.nodes())
