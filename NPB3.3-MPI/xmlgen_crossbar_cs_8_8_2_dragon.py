@@ -168,8 +168,8 @@ if __name__ == "__main__":
         
         for n in nodelist:
             #r = math.ceil(n / npr)
-            n_node_num_1 = 2*n
-            n_node_num_2 = 2*n + 1
+            n_node_num_1 = 2*n - 1
+            n_node_num_2 = 2*n + 1 - 1
             f.write(node.format(n_node_num_1))
             f.write(node.format(n_node_num_2))
             f.write(link_node_router.format(n_node_num_1, n))
@@ -188,8 +188,8 @@ if __name__ == "__main__":
 
         for n in nodelist:
             #r = math.ceil(n / npr)
-            n_node_num_1 = 2*n
-            n_node_num_2 = 2*n + 1
+            n_node_num_1 = 2*n - 1
+            n_node_num_2 = 2*n + 1 - 1
             f.write(route_node_router.format(n_node_num_1, n))
             f.write(route_node_router.format(n_node_num_2, n))
             #f.write(route_node_router_cs.format(n))
