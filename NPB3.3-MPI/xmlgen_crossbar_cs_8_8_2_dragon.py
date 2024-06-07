@@ -190,7 +190,7 @@ if __name__ == "__main__":
             #r = math.ceil(n / npr)
             n_node_num_1 = 2*n
             n_node_num_2 = 2*n + 1
-            f.write(route_node_router.format(n_nude_num_1, n))
+            f.write(route_node_router.format(n_node_num_1, n))
             f.write(route_node_router.format(n_node_num_2, n))
             #f.write(route_node_router_cs.format(n))
             
