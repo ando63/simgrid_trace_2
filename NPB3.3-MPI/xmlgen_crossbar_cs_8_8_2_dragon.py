@@ -41,7 +41,7 @@ link_router_router = """  <link id='links{0}s{1}' bandwidth='50000000000.0' late
 """
 
 route_node_router = """  <route src='n{0}' dst='s{1}'>
-   <link_ctn id='linkn{0}s{0}'/>
+   <link_ctn id='linkn{0}s{1}'/>
   </route>
 """
 
