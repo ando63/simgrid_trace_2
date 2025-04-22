@@ -22,7 +22,7 @@ header = """<?xml version='1.0'?>
 node = """  <host id='n{0}' speed='100000000000.0' core= '1'/>
 """
 
-link_node_router = """  <link id='linkn{1}s{0}' bandwidth='10000000000.0' latency='8.799999999999999e-07'/>
+link_node_router = """  <link id='linkn{1}s{0}' bandwidth='50000000000.0' latency='8.799999999999999e-07'/>
 """
 
 link_router_ls = """  <link id='ls{0}' bandwidth='1.0e+16' latency='1.0e-07'/>
