@@ -128,8 +128,9 @@ if __name__ == "__main__":
             f.write(link_router_router.format(r1, r2))
 
         for n in nodelist:
-            r = math.ceil(n / npr)
-            f.write(route_node_router.format(r, n, r))
+            # r = math.ceil(n / npr)
+            r = n
+            f.write(route_node_router.format(n, r))
             f.write(route_router_node.format(r, n))
 
         for r1, r2 in edgelist:
