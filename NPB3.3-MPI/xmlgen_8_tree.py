@@ -82,7 +82,7 @@ if __name__ == "__main__":
     # G = nx.complete_graph(range(0, 8))
     for i in range(0,8):
      G.add_edge(i,i + 8)
-    for i in range(8,17):
+    for i in range(8,16):
      G.add_edge(i,16)
  
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
