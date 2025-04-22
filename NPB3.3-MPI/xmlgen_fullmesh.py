@@ -75,17 +75,19 @@ if __name__ == "__main__":
     # print(link_node_router.format(0, 1, 2))
 
     G = nx.Graph()
-    G.add_nodes_from([1])
+    G.add_nodes_from(range(0,8))
     #G = nx.read_edgelist(edge)
     #G = nx.grid_2d_graph(4,4)
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
-    
+ 
+    G = nx.complete_graph(range(0, 8))
+ 
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
     n_routers = len(G.nodes())
-    n_nodes = n_routers * npr
+    n_nodes = n_routers # * npr
     edgelist = list(G.edges())
     routerlist = list(G.nodes())
-    nodelist = list(range(1, n_nodes+1))
+    nodelist = list(range(0, n_nodes))
     
     print("edgelist:", G.edges())
     print("nodelist:", G.nodes())
@@ -111,7 +113,8 @@ if __name__ == "__main__":
         f.write(header)
         
         for n in nodelist:
-            r = math.ceil(n / npr)
+            # r = math.ceil(n / npr)
+            r = n
             f.write(node.format(n))
             f.write(link_node_router.format(r, n))
 
