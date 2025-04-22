@@ -74,16 +74,20 @@ if __name__ == "__main__":
     # print(link_node_router.format(0, 1, 2))
 
     G = nx.Graph()
-    G.add_nodes_from(range(0,8))
+    G.add_nodes_from(range(0,17))
     #G = nx.read_edgelist(edge)
     #G = nx.grid_2d_graph(4,4)
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
  
-    G = nx.complete_graph(range(0, 8))
+    # G = nx.complete_graph(range(0, 8))
+    for i in range(0,8):
+     G.add_edge(i,i + 8)
+    for i in range(8,17):
+     G.add_edge(i,17)
  
     #G = nx.convert_node_labels_to_integers(G, first_label=1)
     n_routers = len(G.nodes())
-    n_nodes = n_routers # * npr
+    n_nodes = 8 # * npr
     edgelist = list(G.edges())
     routerlist = list(G.nodes())
     nodelist = list(range(0, n_nodes))
