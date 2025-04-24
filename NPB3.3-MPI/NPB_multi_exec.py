@@ -61,6 +61,8 @@ if __name__ == "__main__":
     basename = "crossbar_8"
     app = "cg"
     app_size = "A"
+    time_cg_10 = 0
+    mops_cg_10 = 0
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
