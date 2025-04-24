@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_8_cg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_10 += float(time) /10
       mops_cg_10 += float(mops) /10
