@@ -63,6 +63,8 @@ if __name__ == "__main__":
     app_size = "A"
     time_cg_tree_8_10 = 0
     mops_cg_tree_8_10 = 0
+    time_cg_poweredtree_8_10 = 0
+    mops_cg_poweredtree_8_10 = 0
     time_cg_fullmesh_8_10 = 0
     mops_cg_fullmesh_8_10 = 0
     time_cg_supertree_4_4_8_10 = 0
@@ -74,6 +76,15 @@ if __name__ == "__main__":
       time, mops = extract_metrics_from_log(log_file)
       time_cg_tree_8_10 += float(time) /10
       mops_cg_tree_8_10 += float(mops) /10
+
+    basename = "poweredtree_8_8"
+
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/poweredtree_8_8_cg.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_cg_poweredtree_8_10 += float(time) /10
+      mops_cg_poweredtree_8_10 += float(mops) /10
 
     basename = "fullmesh_8_8"
     
@@ -95,6 +106,8 @@ if __name__ == "__main__":
 
     print(time_cg_tree_8_10)
     print(mops_cg_tree_8_10)
+    print(time_cg_poweredtree_8_10)
+    print(mops_cg_poweredtree_8_10)
     print(time_cg_fullmesh_8_10)
     print(mops_cg_fullmesh_8_10)
     print(time_cg_supertree_4_4_8_10)
