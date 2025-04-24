@@ -77,7 +77,7 @@ if __name__ == "__main__":
       log_file = 'simgrid_topo/tree_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_tree_8_10 += float(time) #/10
-      mops_cg_tree_8_10 += float(mops) /#10
+      mops_cg_tree_8_10 += float(mops) #/10
 
     basename = "poweredtree_8_8"
 
