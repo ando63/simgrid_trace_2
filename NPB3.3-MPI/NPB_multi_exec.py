@@ -58,7 +58,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     # print(args)
 
-    basename = "tree_8"
+    basename = "tree_8_8"
     app = "cg"
     app_size = "A"
     time_cg_10 = 0
