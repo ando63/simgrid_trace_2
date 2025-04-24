@@ -68,7 +68,7 @@ if __name__ == "__main__":
     npr = args.integer
     
     out_dir = "simgrid_topo"
-    edge = "tree_8"
+    edge = "poweredtree_8"
     
     # print(header)
     # print(link_node_router.format(0, 1, 2))
