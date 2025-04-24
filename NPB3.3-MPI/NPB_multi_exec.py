@@ -66,8 +66,8 @@ if __name__ == "__main__":
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/crossbar_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
-      time_cg_10 = float(time) /10
-      mops_cg_10 = float(mops) /10
+      time_cg_10 += float(time) /10
+      mops_cg_10 += float(mops) /10
 
     print(time_cg_10)
     print(mops_cg_10)
