@@ -219,6 +219,58 @@ if __name__ == "__main__":
       time_mg_supertree_4_4_8_10 += float(time) /10
       mops_mg_supertree_4_4_8_10 += float(mops) /10
 
+    basename = "tree_8_8"
+    app = "ft"
+    time_ft_tree_8_8_10 = 0
+    mops_ft_tree_8_8_10 = 0
+    time_ft_poweredtree_8_8_10 = 0
+    mops_ft_poweredtree_8_8_10 = 0
+    time_ft_fullmesh_8_8_10 = 0
+    mops_ft_fullmesh_8_8_10 = 0
+    time_ft_partlymesh_8_8_10 = 0
+    mops_ft_partlymesh_8_8_10 = 0
+    time_ft_supertree_4_4_8_10 = 0
+    mops_ft_supertree_4_4_8_10 = 0
+
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/tree_8_8_ft.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_ft_tree_8_8_10 += float(time) /10
+      mops_ft_tree_8_8_10 += float(mops) /10
+
+    basename = "poweredtree_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/poweredtree_8_8_ft.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_ft_poweredtree_8_8_10 += float(time) /10
+      mops_ft_poweredtree_8_8_10 += float(mops) /10
+
+    basename = "fullmesh_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/fullmesh_8_8_ft.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_ft_fullmesh_8_8_10 += float(time) /10
+      mops_ft_fullmesh_8_8_10 += float(mops) /10
+
+    basename = "partlymesh_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/partlymesh_8_8_ft.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_ft_partlymesh_8_8_10 += float(time) /10
+      mops_ft_partlymesh_8_8_10 += float(mops) /10
+
+    basename = "supertree_4_4_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/supertree_4_4_8_ft.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_ft_supertree_4_4_8_10 += float(time) /10
+      mops_ft_supertree_4_4_8_10 += float(mops) /10
+
     print("CG")
     print(time_cg_tree_8_10)
     print(mops_cg_tree_8_10)
@@ -254,5 +306,17 @@ if __name__ == "__main__":
     print(mops_mg_partlymesh_8_8_10)
     print(time_mg_supertree_4_4_8_10)
     print(mops_mg_supertree_4_4_8_10)
+
+    print("FT")
+    print(time_ft_tree_8_8_10)
+    print(mops_ft_tree_8_8_10)
+    print(time_ft_poweredtree_8_8_10)
+    print(mops_ft_poweredtree_8_8_10)
+    print(time_ft_fullmesh_8_8_10)
+    print(mops_ft_fullmesh_8_8_10)
+    print(time_ft_partlymesh_8_8_10)
+    print(mops_ft_partlymesh_8_8_10)
+    print(time_ft_supertree_4_4_8_10)
+    print(mops_ft_supertree_4_4_8_10)
 
 
