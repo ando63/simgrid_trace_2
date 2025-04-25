@@ -72,6 +72,8 @@ if __name__ == "__main__":
     time_cg_supertree_4_4_8_10 = 0
     mops_cg_supertree_4_4_8_10 = 0
 
+    """
+
     for i in range(10):
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/tree_8_8_cg.A.8.log'  # ログファイルのパスを指定
@@ -166,6 +168,8 @@ if __name__ == "__main__":
       time, mops = extract_metrics_from_log(log_file)
       time_ep_supertree_4_4_8_10 += float(time) /10
       mops_ep_supertree_4_4_8_10 += float(mops) /10
+
+    """
 
     basename = "tree_8_8"
     app = "mg"
@@ -271,6 +275,8 @@ if __name__ == "__main__":
       time_ft_supertree_4_4_8_10 += float(time) /10
       mops_ft_supertree_4_4_8_10 += float(mops) /10
 
+    """
+
     print("CG")
     print(time_cg_tree_8_10)
     print(mops_cg_tree_8_10)
@@ -294,6 +300,8 @@ if __name__ == "__main__":
     print(mops_ep_partlymesh_8_8_10)
     print(time_ep_supertree_4_4_8_10)
     print(mops_ep_supertree_4_4_8_10)
+
+    """
 
     print("MG")
     print(time_mg_tree_8_8_10)
