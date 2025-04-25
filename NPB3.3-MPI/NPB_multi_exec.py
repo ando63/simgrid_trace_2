@@ -275,6 +275,110 @@ if __name__ == "__main__":
       time_ft_supertree_4_4_8_10 += float(time) /10
       mops_ft_supertree_4_4_8_10 += float(mops) /10
 
+    basename = "tree_8_8"
+    app = "is"
+    time_is_tree_8_8_10 = 0
+    mops_is_tree_8_8_10 = 0
+    time_is_poweredtree_8_8_10 = 0
+    mops_is_poweredtree_8_8_10 = 0
+    time_is_fullmesh_8_8_10 = 0
+    mops_is_fullmesh_8_8_10 = 0
+    time_is_partlymesh_8_8_10 = 0
+    mops_is_partlymesh_8_8_10 = 0
+    time_is_supertree_4_4_8_10 = 0
+    mops_is_supertree_4_4_8_10 = 0
+
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/tree_8_8_is.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_is_tree_8_8_10 += float(time) /10
+      mops_is_tree_8_8_10 += float(mops) /10
+
+    basename = "poweredtree_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/poweredtree_8_8_is.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_is_poweredtree_8_8_10 += float(time) /10
+      mops_is_poweredtree_8_8_10 += float(mops) /10
+
+    basename = "fullmesh_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/fullmesh_8_8_is.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_is_fullmesh_8_8_10 += float(time) /10
+      mops_is_fullmesh_8_8_10 += float(mops) /10
+
+    basename = "partlymesh_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/partlymesh_8_8_is.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_is_partlymesh_8_8_10 += float(time) /10
+      mops_is_partlymesh_8_8_10 += float(mops) /10
+
+    basename = "supertree_4_4_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/supertree_4_4_8_is.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_is_supertree_4_4_8_10 += float(time) /10
+      mops_is_supertree_4_4_8_10 += float(mops) /10
+
+    basename = "tree_8_8"
+    app = "lu"
+    time_lu_tree_8_8_10 = 0
+    mops_lu_tree_8_8_10 = 0
+    time_lu_poweredtree_8_8_10 = 0
+    mops_lu_poweredtree_8_8_10 = 0
+    time_lu_fullmesh_8_8_10 = 0
+    mops_lu_fullmesh_8_8_10 = 0
+    time_lu_partlymesh_8_8_10 = 0
+    mops_lu_partlymesh_8_8_10 = 0
+    time_lu_supertree_4_4_8_10 = 0
+    mops_lu_supertree_4_4_8_10 = 0
+
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/tree_8_8_lu.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_lu_tree_8_8_10 += float(time) /10
+      mops_lu_tree_8_8_10 += float(mops) /10
+
+    basename = "poweredtree_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/poweredtree_8_8_lu.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_lu_poweredtree_8_8_10 += float(time) /10
+      mops_lu_poweredtree_8_8_10 += float(mops) /10
+
+    basename = "fullmesh_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/fullmesh_8_8_lu.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_lu_fullmesh_8_8_10 += float(time) /10
+      mops_lu_fullmesh_8_8_10 += float(mops) /10
+
+    basename = "partlymesh_8_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/partlymesh_8_8_lu.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_lu_partlymesh_8_8_10 += float(time) /10
+      mops_lu_partlymesh_8_8_10 += float(mops) /10
+
+    basename = "supertree_4_4_8"
+    for i in range(10):
+      smpirun_single(basename, app, app_size)
+      log_file = 'simgrid_topo/supertree_4_4_8_lu.A.8.log'  # ログファイルのパスを指定
+      time, mops = extract_metrics_from_log(log_file)
+      time_lu_supertree_4_4_8_10 += float(time) /10
+      mops_lu_supertree_4_4_8_10 += float(mops) /10
+
     """
 
     print("CG")
@@ -326,5 +430,29 @@ if __name__ == "__main__":
     print(mops_ft_partlymesh_8_8_10)
     print(time_ft_supertree_4_4_8_10)
     print(mops_ft_supertree_4_4_8_10)
+
+    print("IS")
+    print(time_is_tree_8_8_10)
+    print(mops_is_tree_8_8_10)
+    print(time_is_poweredtree_8_8_10)
+    print(mops_is_poweredtree_8_8_10)
+    print(time_is_fullmesh_8_8_10)
+    print(mops_is_fullmesh_8_8_10)
+    print(time_is_partlymesh_8_8_10)
+    print(mops_is_partlymesh_8_8_10)
+    print(time_is_supertree_4_4_8_10)
+    print(mops_is_supertree_4_4_8_10)
+
+    print("LU")
+    print(time_lu_tree_8_8_10)
+    print(mops_lu_tree_8_8_10)
+    print(time_lu_poweredtree_8_8_10)
+    print(mops_lu_poweredtree_8_8_10)
+    print(time_lu_fullmesh_8_8_10)
+    print(mops_lu_fullmesh_8_8_10)
+    print(time_lu_partlymesh_8_8_10)
+    print(mops_lu_partlymesh_8_8_10)
+    print(time_lu_supertree_4_4_8_10)
+    print(mops_lu_supertree_4_4_8_10)
 
 
