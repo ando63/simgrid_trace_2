@@ -385,10 +385,10 @@ if __name__ == "__main__":
       time_lu_supertree_4_4_8_10 += float(time) /10
       mops_lu_supertree_4_4_8_10 += float(mops) /10
 
-    #tree_times = [time_cg_tree_8_10, time_ep_tree_8_10,time_mg_tree_8_10,time_ft_tree_8_10,time_is_tree_8_10,time_lu_tree_8_10]
-    poweredtree_times = [time_cg_poweredtree_8_10, time_ep_poweredtree_8_10,time_mg_poweredtree_8_10,time_ft_poweredtree_8_10,time_is_poweredtree_8_10,time_lu_poweredtree_8_10]
+    #tree_times = [time_cg_tree_8_10, time_ep_tree_8_8_10,time_mg_tree_8_8_10,time_ft_tree_8_8_10,time_is_tree_8_8_10,time_lu_tree_8_8_10]
+    poweredtree_times = [time_cg_poweredtree_8_10, time_ep_poweredtree_8_8_10,time_mg_poweredtree_8_8_10,time_ft_poweredtree_8_8_10,time_is_poweredtree_8_8_10,time_lu_poweredtree_8_8_10]
     #fullmesh_times = [0.156, 0.829,1,1,1,1]
-    partlymesh_times = [time_cg_partlymesh_8_10, time_ep_partlymesh_8_10,time_mg_partlymesh_8_10,time_ft_partlymesh_8_10,time_is_partlymesh_8_10,time_lu_partlymesh_8_10]
+    partlymesh_times = [time_cg_partlymesh_8_10, time_ep_partlymesh_8_8_10,time_mg_partlymesh_8_8_10,time_ft_partlymesh_8_8_10,time_is_partlymesh_8_8_10,time_lu_partlymesh_8_8_10]
     supertree_times = [time_cg_supertree_4_4_8_10, time_ep_supertree_4_4_8_10,time_mg_supertree_4_4_8_10,time_ft_supertree_4_4_8_10,time_is_supertree_4_4_8_10,time_lu_supertree_4_4_8_10]
 
     x = range(len(benchmarks))
