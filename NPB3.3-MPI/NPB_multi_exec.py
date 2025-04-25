@@ -3,6 +3,7 @@ import os
 import glob
 import argparse
 import subprocess
+import matplotlib.pyplot as plt
 
 def smpirun_single(basename, app, app_size):
     workdir = "./simgrid_topo/"
@@ -58,6 +59,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
     # print(args)
 
+    benchmarks = [
+    "CG",
+    "EP",
+    "MG",
+    "FT",
+    "IS",
+    "LU"
+    ]
+
     basename = "tree_8_8"
     app = "cg"
     app_size = "A"
@@ -71,8 +81,6 @@ if __name__ == "__main__":
     mops_cg_partlymesh_8_10 = 0
     time_cg_supertree_4_4_8_10 = 0
     mops_cg_supertree_4_4_8_10 = 0
-
-    """
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
@@ -168,8 +176,6 @@ if __name__ == "__main__":
       time, mops = extract_metrics_from_log(log_file)
       time_ep_supertree_4_4_8_10 += float(time) /10
       mops_ep_supertree_4_4_8_10 += float(mops) /10
-
-    """
 
     basename = "tree_8_8"
     app = "mg"
@@ -379,7 +385,30 @@ if __name__ == "__main__":
       time_lu_supertree_4_4_8_10 += float(time) /10
       mops_lu_supertree_4_4_8_10 += float(mops) /10
 
-    """
+    #tree_times = [time_cg_tree_8_10, time_ep_tree_8_10,time_mg_tree_8_10,time_ft_tree_8_10,time_is_tree_8_10,time_lu_tree_8_10]
+    poweredtree_times = [time_cg_poweredtree_8_10, time_ep_poweredtree_8_10,time_mg_poweredtree_8_10,time_ft_poweredtree_8_10,time_is_poweredtree_8_10,time_lu_poweredtree_8_10]
+    #fullmesh_times = [0.156, 0.829,1,1,1,1]
+    partlymesh_times = [time_cg_partlymesh_8_10, time_ep_partlymesh_8_10,time_mg_partlymesh_8_10,time_ft_partlymesh_8_10,time_is_partlymesh_8_10,time_lu_partlymesh_8_10]
+    supertree_times = [time_cg_supertree_4_4_8_10, time_ep_supertree_4_4_8_10,time_mg_supertree_4_4_8_10,time_ft_supertree_4_4_8_10,time_is_supertree_4_4_8_10,time_lu_supertree_4_4_8_10]
+
+    x = range(len(benchmarks))
+    bar_width = 0.25
+    colors = ["lightgray", "dimgray", "black"]
+    plt.figure(figsize=(10, 6))
+    plt.bar([i - bar_width for i in x], poweredtree_times, width=bar_width, label="tree", color=colors[0])
+    plt.bar([i for i in x], partlymesh_times, width=bar_width, label="partlymesh", color=colors[1])
+    plt.bar([i + bar_width for i in x], supertree_times, width=bar_width, label="flattentree", color=colors[2])
+    plt.xticks(x, benchmarks, rotation=15)
+    plt.xlabel("Benchmarks")
+    plt.ylabel("Execution Time (s)")
+    plt.title("Execution Time per Topology")
+    plt.legend()
+    plt.tight_layout()
+    
+    plt.savefig("topology_cg_ep_execution_time_comparison.png")
+    plt.close()
+
+    print("complete!")
 
     print("CG")
     print(time_cg_tree_8_10)
@@ -404,8 +433,6 @@ if __name__ == "__main__":
     print(mops_ep_partlymesh_8_8_10)
     print(time_ep_supertree_4_4_8_10)
     print(mops_ep_supertree_4_4_8_10)
-
-    """
 
     print("MG")
     print(time_mg_tree_8_8_10)
