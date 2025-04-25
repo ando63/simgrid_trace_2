@@ -10,6 +10,7 @@ COPY ./simgrid-v3.18/ /root/simgrid_inst/simgrid-v3.18/
 RUN cmake -DCMAKE_INSTALL_PREFIX=/opt/simgrid .
 RUN make -j8
 RUN make install
+RUN pip3 install --upgrade pip setuptools
 
 RUN pip3 install networkx numpy
 
