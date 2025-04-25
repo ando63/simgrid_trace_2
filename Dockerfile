@@ -12,7 +12,7 @@ RUN make -j8
 RUN make install
 RUN pip3 install --upgrade pip setuptools
 
-RUN pip3 install networkx numpy
+RUN pip3 install networkx numpy matplotlib
 
 ENV PATH /opt/simgrid/bin/:$PATH
 WORKDIR /root/workspace
