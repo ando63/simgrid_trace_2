@@ -4,6 +4,7 @@ import glob
 import argparse
 import subprocess
 import matplotlib.pyplot as plt
+import json
 
 def smpirun_single(basename, app, app_size):
     workdir = "./simgrid_topo/"
@@ -394,6 +395,23 @@ if __name__ == "__main__":
     poweredtree_mops = [mops_cg_poweredtree_8_10 / mops_cg_poweredtree_8_10, mops_ep_poweredtree_8_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_poweredtree_8_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_poweredtree_8_8_10 / mops_ft_poweredtree_8_8_10,mops_is_poweredtree_8_8_10 / mops_is_poweredtree_8_8_10,mops_lu_poweredtree_8_8_10 / mops_lu_poweredtree_8_8_10]
     partlymesh_mops = [mops_cg_partlymesh_8_10 / mops_cg_poweredtree_8_10, mops_ep_partlymesh_8_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_partlymesh_8_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_partlymesh_8_8_10 / mops_ft_poweredtree_8_8_10,mops_is_partlymesh_8_8_10 / mops_is_poweredtree_8_8_10,mops_lu_partlymesh_8_8_10 /mops_lu_poweredtree_8_8_10]
     supertree_mops = [mops_cg_supertree_4_4_8_10 / mops_cg_poweredtree_8_10, mops_ep_supertree_4_4_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_supertree_4_4_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_supertree_4_4_8_10 / mops_ft_poweredtree_8_8_10,mops_is_supertree_4_4_8_10 / mops_is_poweredtree_8_8_10,mops_lu_supertree_4_4_8_10 / mops_lu_poweredtree_8_8_10]
+
+    data = {
+        "poweredtree": {
+            "times": poweredtree_times,
+            "mops": poweredtree_mops
+        },
+        "partlymesh": {
+            "times": partlymesh_times,
+            "mops": partlymesh_mops
+        },
+        "supertree": {
+            "times": supertree_times,
+            "mops": supertree_mops
+        }
+    }
+    with open("results.json", "w") as f:
+        json.dump(data, f, indent=2)
 
     x = range(len(benchmarks))
     bar_width = 0.25
