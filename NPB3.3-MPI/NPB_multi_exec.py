@@ -72,14 +72,14 @@ if __name__ == "__main__":
     basename = "tree_8_8"
     app = "cg"
     app_size = "A"
-    time_cg_tree_8_10 = 0
-    mops_cg_tree_8_10 = 0
-    time_cg_poweredtree_8_10 = 0
-    mops_cg_poweredtree_8_10 = 0
-    time_cg_fullmesh_8_10 = 0
-    mops_cg_fullmesh_8_10 = 0
-    time_cg_partlymesh_8_10 = 0
-    mops_cg_partlymesh_8_10 = 0
+    time_cg_tree_8_8_10 = 0
+    mops_cg_tree_8_8_10 = 0
+    time_cg_poweredtree_8_8_10 = 0
+    mops_cg_poweredtree_8_8_10 = 0
+    time_cg_fullmesh_8_8_10 = 0
+    mops_cg_fullmesh_8_8_10 = 0
+    time_cg_partlymesh_8_8_10 = 0
+    mops_cg_partlymesh_8_8_10 = 0
     time_cg_supertree_4_4_8_10 = 0
     mops_cg_supertree_4_4_8_10 = 0
 
@@ -87,8 +87,8 @@ if __name__ == "__main__":
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/tree_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
-      time_cg_tree_8_10 += float(time) /10
-      mops_cg_tree_8_10 += float(mops) /10
+      time_cg_tree_8_8_10 += float(time) /10
+      mops_cg_tree_8_8_10 += float(mops) /10
 
     basename = "poweredtree_8_8"
 
@@ -96,8 +96,8 @@ if __name__ == "__main__":
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/poweredtree_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
-      time_cg_poweredtree_8_10 += float(time) /10
-      mops_cg_poweredtree_8_10 += float(mops) /10
+      time_cg_poweredtree_8_8_10 += float(time) /10
+      mops_cg_poweredtree_8_8_10 += float(mops) /10
 
     basename = "fullmesh_8_8"
     
@@ -105,8 +105,8 @@ if __name__ == "__main__":
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/fullmesh_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
-      time_cg_fullmesh_8_10 += float(time) /10
-      mops_cg_fullmesh_8_10 += float(mops) /10
+      time_cg_fullmesh_8_8_10 += float(time) /10
+      mops_cg_fullmesh_8_8_10 += float(mops) /10
 
     basename = "partlymesh_8_8"
 
@@ -114,8 +114,8 @@ if __name__ == "__main__":
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/partlymesh_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
-      time_cg_partlymesh_8_10 += float(time) /10
-      mops_cg_partlymesh_8_10 += float(mops) /10
+      time_cg_partlymesh_8_8_10 += float(time) /10
+      mops_cg_partlymesh_8_8_10 += float(mops) /10
 
     basename = "supertree_4_4_8"
 
@@ -386,14 +386,14 @@ if __name__ == "__main__":
       time_lu_supertree_4_4_8_10 += float(time) /10
       mops_lu_supertree_4_4_8_10 += float(mops) /10
 
-    #tree_times = [time_cg_tree_8_10, time_ep_tree_8_8_10,time_mg_tree_8_8_10,time_ft_tree_8_8_10,time_is_tree_8_8_10,time_lu_tree_8_8_10]
-    poweredtree_times = [time_cg_poweredtree_8_10 / time_cg_poweredtree_8_10, time_ep_poweredtree_8_8_10 / time_ep_poweredtree_8_8_10,time_mg_poweredtree_8_8_10 / time_mg_poweredtree_8_8_10,time_ft_poweredtree_8_8_10 / time_ft_poweredtree_8_8_10,time_is_poweredtree_8_8_10 / time_is_poweredtree_8_8_10,time_lu_poweredtree_8_8_10 / time_lu_poweredtree_8_8_10]
+    #tree_times = [time_cg_tree_8_8_10, time_ep_tree_8_8_10,time_mg_tree_8_8_10,time_ft_tree_8_8_10,time_is_tree_8_8_10,time_lu_tree_8_8_10]
+    poweredtree_times = [time_cg_poweredtree_8_8_10 / time_cg_poweredtree_8_8_10, time_ep_poweredtree_8_8_10 / time_ep_poweredtree_8_8_10,time_mg_poweredtree_8_8_10 / time_mg_poweredtree_8_8_10,time_ft_poweredtree_8_8_10 / time_ft_poweredtree_8_8_10,time_is_poweredtree_8_8_10 / time_is_poweredtree_8_8_10,time_lu_poweredtree_8_8_10 / time_lu_poweredtree_8_8_10]
     #fullmesh_times = [0.156, 0.829,1,1,1,1]
-    partlymesh_times = [time_cg_partlymesh_8_10 / time_cg_poweredtree_8_10, time_ep_partlymesh_8_8_10 / time_ep_poweredtree_8_8_10,time_mg_partlymesh_8_8_10 / time_mg_poweredtree_8_8_10,time_ft_partlymesh_8_8_10 / time_ft_poweredtree_8_8_10,time_is_partlymesh_8_8_10 / time_is_poweredtree_8_8_10,time_lu_partlymesh_8_8_10 /time_lu_poweredtree_8_8_10]
+    partlymesh_times = [time_cg_partlymesh_8_8_10 / time_cg_poweredtree_8_8_10, time_ep_partlymesh_8_8_10 / time_ep_poweredtree_8_8_10,time_mg_partlymesh_8_8_10 / time_mg_poweredtree_8_8_10,time_ft_partlymesh_8_8_10 / time_ft_poweredtree_8_8_10,time_is_partlymesh_8_8_10 / time_is_poweredtree_8_8_10,time_lu_partlymesh_8_8_10 /time_lu_poweredtree_8_8_10]
     supertree_times = [time_cg_supertree_4_4_8_10 / time_cg_poweredtree_8_10, time_ep_supertree_4_4_8_10 / time_ep_poweredtree_8_8_10,time_mg_supertree_4_4_8_10 / time_mg_poweredtree_8_8_10,time_ft_supertree_4_4_8_10 / time_ft_poweredtree_8_8_10,time_is_supertree_4_4_8_10 / time_is_poweredtree_8_8_10,time_lu_supertree_4_4_8_10 / time_lu_poweredtree_8_8_10]
 
-    poweredtree_mops = [mops_cg_poweredtree_8_10 / mops_cg_poweredtree_8_10, mops_ep_poweredtree_8_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_poweredtree_8_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_poweredtree_8_8_10 / mops_ft_poweredtree_8_8_10,mops_is_poweredtree_8_8_10 / mops_is_poweredtree_8_8_10,mops_lu_poweredtree_8_8_10 / mops_lu_poweredtree_8_8_10]
-    partlymesh_mops = [mops_cg_partlymesh_8_10 / mops_cg_poweredtree_8_10, mops_ep_partlymesh_8_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_partlymesh_8_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_partlymesh_8_8_10 / mops_ft_poweredtree_8_8_10,mops_is_partlymesh_8_8_10 / mops_is_poweredtree_8_8_10,mops_lu_partlymesh_8_8_10 /mops_lu_poweredtree_8_8_10]
+    poweredtree_mops = [mops_cg_poweredtree_8_8_10 / mops_cg_poweredtree_8_8_10, mops_ep_poweredtree_8_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_poweredtree_8_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_poweredtree_8_8_10 / mops_ft_poweredtree_8_8_10,mops_is_poweredtree_8_8_10 / mops_is_poweredtree_8_8_10,mops_lu_poweredtree_8_8_10 / mops_lu_poweredtree_8_8_10]
+    partlymesh_mops = [mops_cg_partlymesh_8_8_10 / mops_cg_poweredtree_8_8_10, mops_ep_partlymesh_8_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_partlymesh_8_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_partlymesh_8_8_10 / mops_ft_poweredtree_8_8_10,mops_is_partlymesh_8_8_10 / mops_is_poweredtree_8_8_10,mops_lu_partlymesh_8_8_10 /mops_lu_poweredtree_8_8_10]
     supertree_mops = [mops_cg_supertree_4_4_8_10 / mops_cg_poweredtree_8_10, mops_ep_supertree_4_4_8_10 / mops_ep_poweredtree_8_8_10,mops_mg_supertree_4_4_8_10 / mops_mg_poweredtree_8_8_10,mops_ft_supertree_4_4_8_10 / mops_ft_poweredtree_8_8_10,mops_is_supertree_4_4_8_10 / mops_is_poweredtree_8_8_10,mops_lu_supertree_4_4_8_10 / mops_lu_poweredtree_8_8_10]
 
     data = {
@@ -433,14 +433,14 @@ if __name__ == "__main__":
     print("complete!")
 
     print("CG")
-    print(time_cg_tree_8_10)
-    print(mops_cg_tree_8_10)
-    print(time_cg_poweredtree_8_10)
-    print(mops_cg_poweredtree_8_10)
-    print(time_cg_fullmesh_8_10)
-    print(mops_cg_fullmesh_8_10)
-    print(time_cg_partlymesh_8_10)
-    print(mops_cg_partlymesh_8_10)
+    print(time_cg_tree_8_8_10)
+    print(mops_cg_tree_8_8_10)
+    print(time_cg_poweredtree_8_8_10)
+    print(mops_cg_poweredtree_8_8_10)
+    print(time_cg_fullmesh_8_8_10)
+    print(mops_cg_fullmesh_8_8_10)
+    print(time_cg_partlymesh_8_8_10)
+    print(mops_cg_partlymesh_8_8_10)
     print(time_cg_supertree_4_4_8_10)
     print(mops_cg_supertree_4_4_8_10)
 
