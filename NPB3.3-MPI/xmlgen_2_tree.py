@@ -47,7 +47,6 @@ route_router_node = """  <route src='s{0}' dst='n{1}' symmetrical='NO'>
 
 route_router_router = """  <route src='s{0}' dst='s{1}' symmetrical='NO'>
    <link_ctn id='links{2}s{3}'/>
-   <link_ctn id='ls{4}'/>
   </route>
 """
 
@@ -121,8 +120,12 @@ if __name__ == "__main__":
             f.write(node.format(n))
             f.write(link_node_router.format(r, n))
 
+        """
+
         for r in routerlist:
             f.write(link_router_ls.format(r))
+
+        """
 
         for r in routerlist:
             f.write(router.format(r))
@@ -137,7 +140,7 @@ if __name__ == "__main__":
             f.write(route_router_node.format(r, n))
 
         for r1, r2 in edgelist:
-            f.write(route_router_router.format(r1, r2, r1, r2, r2))
-            f.write(route_router_router.format(r2, r1, r1, r2, r1))
+            f.write(route_router_router.format(r1, r2, r1, r2))
+            f.write(route_router_router.format(r2, r1, r1, r2))
             
         f.write(footer)
