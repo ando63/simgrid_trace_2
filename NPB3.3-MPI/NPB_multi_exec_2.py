@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_2_2_cg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_2_2_cg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_tree_2_2_10 += float(time) /10
       mops_cg_tree_2_2_10 += float(mops) /10
@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/poweredtree_2_2_cg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/poweredtree_2_2_cg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_poweredtree_2_2_10 += float(time) /10
       mops_cg_poweredtree_2_2_10 += float(mops) /10
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/fullmesh_2_2_cg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/fullmesh_2_2_cg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_fullmesh_2_2_10 += float(time) /10
       mops_cg_fullmesh_2_2_10 += float(mops) /10
@@ -113,7 +113,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/partlymesh_2_2_cg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/partlymesh_2_2_cg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_partlymesh_2_2_10 += float(time) /10
       mops_cg_partlymesh_2_2_10 += float(mops) /10
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/supertree_2_2_cg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/supertree_2_2_cg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_cg_supertree_2_2_10 += float(time) /10
       mops_cg_supertree_2_2_10 += float(mops) /10
@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_2_2_ep.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_2_2_ep.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ep_tree_2_2_10 += float(time) /10
       mops_ep_tree_2_2_10 += float(mops) /10
@@ -150,7 +150,7 @@ if __name__ == "__main__":
     basename = "poweredtree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/poweredtree_2_2_ep.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/poweredtree_2_2_ep.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ep_poweredtree_2_2_10 += float(time) /10
       mops_ep_poweredtree_2_2_10 += float(mops) /10
@@ -158,7 +158,7 @@ if __name__ == "__main__":
     basename = "fullmesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/fullmesh_2_2_ep.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/fullmesh_2_2_ep.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ep_fullmesh_2_2_10 += float(time) /10
       mops_ep_fullmesh_2_2_10 += float(mops) /10
@@ -166,7 +166,7 @@ if __name__ == "__main__":
     basename = "partlymesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/partlymesh_2_2_ep.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/partlymesh_2_2_ep.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ep_partlymesh_2_2_10 += float(time) /10
       mops_ep_partlymesh_2_2_10 += float(mops) /10
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     basename = "supertree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/supertree_2_2_ep.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/supertree_2_2_ep.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ep_supertree_2_2_10 += float(time) /10
       mops_ep_supertree_2_2_10 += float(mops) /10
@@ -194,7 +194,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_2_2_mg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_2_2_mg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_mg_tree_2_2_10 += float(time) /10
       mops_mg_tree_2_2_10 += float(mops) /10
@@ -202,7 +202,7 @@ if __name__ == "__main__":
     basename = "poweredtree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/poweredtree_2_2_mg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/poweredtree_2_2_mg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_mg_poweredtree_2_2_10 += float(time) /10
       mops_mg_poweredtree_2_2_10 += float(mops) /10
@@ -210,7 +210,7 @@ if __name__ == "__main__":
     basename = "fullmesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/fullmesh_2_2_mg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/fullmesh_2_2_mg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_mg_fullmesh_2_2_10 += float(time) /10
       mops_mg_fullmesh_2_2_10 += float(mops) /10
@@ -218,7 +218,7 @@ if __name__ == "__main__":
     basename = "partlymesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/partlymesh_2_2_mg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/partlymesh_2_2_mg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_mg_partlymesh_2_2_10 += float(time) /10
       mops_mg_partlymesh_2_2_10 += float(mops) /10
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     basename = "supertree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/supertree_2_2_mg.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/supertree_2_2_mg.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_mg_supertree_2_2_10 += float(time) /10
       mops_mg_supertree_2_2_10 += float(mops) /10
@@ -246,7 +246,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_2_2_ft.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_2_2_ft.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ft_tree_2_2_10 += float(time) /10
       mops_ft_tree_2_2_10 += float(mops) /10
@@ -254,7 +254,7 @@ if __name__ == "__main__":
     basename = "poweredtree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/poweredtree_2_2_ft.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/poweredtree_2_2_ft.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ft_poweredtree_2_2_10 += float(time) /10
       mops_ft_poweredtree_2_2_10 += float(mops) /10
@@ -262,7 +262,7 @@ if __name__ == "__main__":
     basename = "fullmesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/fullmesh_2_2_ft.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/fullmesh_2_2_ft.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ft_fullmesh_2_2_10 += float(time) /10
       mops_ft_fullmesh_2_2_10 += float(mops) /10
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     basename = "partlymesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/partlymesh_2_2_ft.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/partlymesh_2_2_ft.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ft_partlymesh_2_2_10 += float(time) /10
       mops_ft_partlymesh_2_2_10 += float(mops) /10
@@ -278,7 +278,7 @@ if __name__ == "__main__":
     basename = "supertree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/supertree_2_2_ft.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/supertree_2_2_ft.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_ft_supertree_2_2_10 += float(time) /10
       mops_ft_supertree_2_2_10 += float(mops) /10
@@ -298,7 +298,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_2_2_is.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_2_2_is.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_is_tree_2_2_10 += float(time) /10
       mops_is_tree_2_2_10 += float(mops) /10
@@ -306,7 +306,7 @@ if __name__ == "__main__":
     basename = "poweredtree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/poweredtree_2_2_is.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/poweredtree_2_2_is.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_is_poweredtree_2_2_10 += float(time) /10
       mops_is_poweredtree_2_2_10 += float(mops) /10
@@ -314,7 +314,7 @@ if __name__ == "__main__":
     basename = "fullmesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/fullmesh_2_2_is.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/fullmesh_2_2_is.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_is_fullmesh_2_2_10 += float(time) /10
       mops_is_fullmesh_2_2_10 += float(mops) /10
@@ -322,7 +322,7 @@ if __name__ == "__main__":
     basename = "partlymesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/partlymesh_2_2_is.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/partlymesh_2_2_is.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_is_partlymesh_2_2_10 += float(time) /10
       mops_is_partlymesh_2_2_10 += float(mops) /10
@@ -330,7 +330,7 @@ if __name__ == "__main__":
     basename = "supertree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/supertree_2_2_is.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/supertree_2_2_is.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_is_supertree_2_2_10 += float(time) /10
       mops_is_supertree_2_2_10 += float(mops) /10
@@ -350,7 +350,7 @@ if __name__ == "__main__":
 
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/tree_2_2_lu.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/tree_2_2_lu.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_lu_tree_2_2_10 += float(time) /10
       mops_lu_tree_2_2_10 += float(mops) /10
@@ -358,7 +358,7 @@ if __name__ == "__main__":
     basename = "poweredtree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/poweredtree_2_2_lu.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/poweredtree_2_2_lu.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_lu_poweredtree_2_2_10 += float(time) /10
       mops_lu_poweredtree_2_2_10 += float(mops) /10
@@ -366,7 +366,7 @@ if __name__ == "__main__":
     basename = "fullmesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/fullmesh_2_2_lu.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/fullmesh_2_2_lu.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_lu_fullmesh_2_2_10 += float(time) /10
       mops_lu_fullmesh_2_2_10 += float(mops) /10
@@ -374,7 +374,7 @@ if __name__ == "__main__":
     basename = "partlymesh_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/partlymesh_2_2_lu.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/partlymesh_2_2_lu.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_lu_partlymesh_2_2_10 += float(time) /10
       mops_lu_partlymesh_2_2_10 += float(mops) /10
@@ -382,7 +382,7 @@ if __name__ == "__main__":
     basename = "supertree_2_2"
     for i in range(10):
       smpirun_single(basename, app, app_size)
-      log_file = 'simgrid_topo/supertree_2_2_lu.A.8.log'  # ログファイルのパスを指定
+      log_file = 'simgrid_topo/supertree_2_2_lu.A.2.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
       time_lu_supertree_2_2_10 += float(time) /10
       mops_lu_supertree_2_2_10 += float(mops) /10
