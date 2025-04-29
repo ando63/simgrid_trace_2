@@ -35,7 +35,7 @@ router = """  <router id='s{0}'/>
 link_router_router = """  <link id='links{0}s{1}' bandwidth='15000000000.0' latency='2.0852e-06'/>
 """
 
-link_router_router_upper = """  <link id='links{0}s{1}_powered' bandwidth='120000000000.0' latency='2.0852e-06'/>
+link_router_router_upper = """  <link id='links{0}s{1}_upper' bandwidth='120000000000.0' latency='2.0852e-06'/>
 """
 
 route_node_router = """  <route src='n{1}' dst='s{0}' symmetrical='NO'>
