@@ -111,6 +111,7 @@ if __name__ == "__main__":
         for i in range(4,4+num):
           G.add_edge(j,n)
           n += 1
+        G.add_edge(j,4 + non_zero_groups)
         j += 1
       else:
         continue
