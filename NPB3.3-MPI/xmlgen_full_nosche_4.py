@@ -106,7 +106,7 @@ if __name__ == "__main__":
     n = 0
     j = 4
 
-    for name, num in groupcounts.items():
+    for name, num in group_counts.items():
       if num != 0:
         for i in range(4,4+num):
           G.add_edge(j,n)
