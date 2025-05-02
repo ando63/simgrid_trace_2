@@ -174,7 +174,7 @@ if __name__ == "__main__":
             elif (r2 < (4 + non_zero_groups) and G.degree[r2] >= 3):
               f.write(link_router_router_upper.format(r1, r2, int((G.degree[r2] - 1) * 2500000000)))
             else:
-              f.write(link_router_router_upper.format(r1, r2, int(5000000000)))
+              f.write(link_router_router_upper.format(r1, r2, int(2500000000)))
           else:
             f.write(link_router_router.format(r1, r2))
 
