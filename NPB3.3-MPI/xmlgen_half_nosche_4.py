@@ -71,7 +71,7 @@ if __name__ == "__main__":
     npr = args.integer
     
     out_dir = "simgrid_topo"
-    edge = "full_nosche_4"
+    edge = "half_nosche_4"
     
     # print(header)
     # print(link_node_router.format(0, 1, 2))
