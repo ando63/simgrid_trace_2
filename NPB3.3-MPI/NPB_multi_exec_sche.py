@@ -99,8 +99,8 @@ if __name__ == "__main__":
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/half_nosche_8_8_cg.A.8.log'  # ログファイルのパスを指定
       time, mops = extract_metrics_from_log(log_file)
-      time_cg_full_nosche_8_8_10 += float(time) /10
-      mops_cg_full_nosche_8_8_10 += float(mops) /10
+      time_cg_half_nosche_8_8_10 += float(time) /10
+      mops_cg_half_nosche_8_8_10 += float(mops) /10
 
     basename = "quarter_nosche_8_8"
     time_cg_quarter_nosche_8_8_10 = 0
