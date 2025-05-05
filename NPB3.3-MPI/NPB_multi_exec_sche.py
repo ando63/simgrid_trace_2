@@ -121,7 +121,7 @@ if __name__ == "__main__":
     plt.bar([i - bar_width for i in x], time_cg_full_nosche_8_8_10, width=bar_width, label="full", color=colors[0])
     plt.bar([i for i in x], time_cg_half_nosche_8_8_10, width=bar_width, label="1/2", color=colors[1])
     plt.bar([i + bar_width for i in x], time_cg_quarter_nosche_8_8_10, width=bar_width, label="1/4", color=colors[2])
-    plt.xticks(x, uplink_size, rotation=15)
+    plt.xticks(1, uplink_size, rotation=15)
     plt.xlabel("uplink_size")
     plt.ylabel("Execution Time (s)")
     plt.title("Execution Time per uplink size")
