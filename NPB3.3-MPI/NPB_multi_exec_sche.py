@@ -114,7 +114,7 @@ if __name__ == "__main__":
       time_cg_quarter_nosche_8_8_10 += float(time) /10
       mops_cg_quarter_nosche_8_8_10 += float(mops) /10
 
-    x = range(len(benchmarks))
+    x = range(len(uplink_size))
     bar_width = 0.25
     colors = ["lightgray", "dimgray", "black"]
     plt.figure(figsize=(10, 6))
