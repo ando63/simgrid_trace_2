@@ -22,7 +22,7 @@ header = """<?xml version='1.0'?>
 node = """  <host id='n{0}' speed='100000000000.0' core= '1'/>
 """
 
-link_node_router = """  <link id='linkn{1}s{0}' bandwidth='10000000000.0' latency='8.799999999999999e-07'/>
+link_node_router = """  <link id='linkn{1}s{0}' bandwidth='1000000000.0' latency='8.799999999999999e-07'/>
 """
 
 link_router_ls = """  <link id='ls{0}' bandwidth='1.0e+16' latency='1.0e-07'/>
@@ -32,7 +32,7 @@ router = """  <router id='s{0}'/>
 """
 
 
-link_router_router = """  <link id='links{0}s{1}' bandwidth='10000000000.0' latency='2.0852e-06'/>
+link_router_router = """  <link id='links{0}s{1}' bandwidth='1000000000.0' latency='2.0852e-06'/>
 """
 
 link_router_router_upper = """  <link id='links{0}s{1}' bandwidth='{2}.0' latency='2.0852e-06'/>
@@ -170,9 +170,9 @@ if __name__ == "__main__":
         for r1, r2 in edgelist:
           if (r1 >= 8 and r2 >= 8):
             if (r1 < (8 + non_zero_groups) and G.degree[r1] >= 3):
-              f.write(link_router_router_upper.format(r1, r2, int((G.degree[r1] - 1) * 10000000000)))
+              f.write(link_router_router_upper.format(r1, r2, int((G.degree[r1] - 1) * 1000000000)))
             elif (r2 < (8 + non_zero_groups) and G.degree[r2] >= 3):
-              f.write(link_router_router_upper.format(r1, r2, int((G.degree[r2] - 1) * 10000000000)))
+              f.write(link_router_router_upper.format(r1, r2, int((G.degree[r2] - 1) * 1000000000)))
             else:
               f.write(link_router_router.format(r1, r2))
           else:
