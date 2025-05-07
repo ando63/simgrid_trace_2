@@ -82,7 +82,7 @@ if __name__ == "__main__":
     time_cg_full_nosche_8_8_10 = 0
     mops_cg_full_nosche_8_8_10 = 0
 
-    for i in range(10):
+    for i in range(50):
       subprocess.run(["python3", "xmlgen_full_nosche_8.py", "8"])
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/full_nosche_8_8_cg.A.8.log'  # ログファイルのパスを指定
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     time_cg_half_nosche_8_8_10 = 0
     mops_cg_half_nosche_8_8_10 = 0
 
-    for i in range(10):
+    for i in range(50):
       subprocess.run(["python3", "xmlgen_half_nosche_8.py", "8"])
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/half_nosche_8_8_cg.A.8.log'  # ログファイルのパスを指定
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     time_cg_quarter_nosche_8_8_10 = 0
     mops_cg_quarter_nosche_8_8_10 = 0
     
-    for i in range(10):
+    for i in range(50):
       subprocess.run(["python3", "xmlgen_quarter_nosche_8.py", "8"])
       smpirun_single(basename, app, app_size)
       log_file = 'simgrid_topo/quarter_nosche_8_8_cg.A.8.log'  # ログファイルのパスを指定
