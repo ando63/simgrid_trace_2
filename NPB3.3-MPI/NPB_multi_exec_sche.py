@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
     plt.figure(figsize=(6, 5))
     plt.bar(x, times, tick_label=labels, color=colors)
-    plt.xlabel("Config")
+    plt.xlabel("Upper link size")
     plt.ylabel("Execution Time (s)")
     plt.title("Execution Time Comparison")
     plt.tight_layout()
