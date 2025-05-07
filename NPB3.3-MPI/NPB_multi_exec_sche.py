@@ -146,7 +146,10 @@ if __name__ == "__main__":
     plt.ylabel("Execution Time (s)")
     plt.title("Execution Time Comparison")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("uplink_size_cg_execution_time_comparison.png")
+    plt.close()
+
+    print("complete!")
 
     print("CG")
     print(time_cg_full_nosche_8_8_10)
