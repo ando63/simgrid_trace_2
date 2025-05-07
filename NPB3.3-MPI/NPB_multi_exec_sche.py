@@ -114,7 +114,8 @@ if __name__ == "__main__":
       time_cg_quarter_nosche_8_8_10 += float(time) /10
       mops_cg_quarter_nosche_8_8_10 += float(mops) /10
 
-    x = range(len(uplink_size))
+    """
+    x = 1
     bar_width = 0.25
     colors = ["lightgray", "dimgray", "black"]
     plt.figure(figsize=(10, 6))
@@ -132,6 +133,20 @@ if __name__ == "__main__":
     plt.close()
 
     print("complete!")
+    """
+
+    x = [0, 1, 2]
+    times = [time_cg_full_nosche_8_8_10, time_cg_half_nosche_8_8_10, time_cg_quarter_nosche_8_8_10]
+    labels = ["full", "1/2", "1/4"]
+    colors = ["lightgray", "dimgray", "black"]
+
+    plt.figure(figsize=(6, 5))
+    plt.bar(x, times, tick_label=labels, color=colors)
+    plt.xlabel("Config")
+    plt.ylabel("Execution Time (s)")
+    plt.title("Execution Time Comparison")
+    plt.tight_layout()
+    plt.show()
 
     print("CG")
     print(time_cg_full_nosche_8_8_10)
