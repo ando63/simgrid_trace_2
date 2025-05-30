@@ -78,7 +78,7 @@ if __name__ == "__main__":
     #G = nx.grid_2d_graph(4,4)
     #G = nx.grid_graph(dim=[4,4,4,4], periodic=True)
  
-    G = nx.complete_graph(range(0, 8))
+    #G = nx.complete_graph(range(0, 8))
     for i in range(8):
       for j in range(8,16):
         G.add_edge(i,j)
