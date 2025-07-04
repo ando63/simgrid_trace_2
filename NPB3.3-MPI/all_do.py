@@ -24,4 +24,4 @@ for bench in benchmarks:
             ]
             subprocess.run(cmd)
         else:
-            print(f"❌ {file_path} は存在しません。")
+            print(f"{file_path} は存在しません。")
