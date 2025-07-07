@@ -12,6 +12,7 @@ for bench in benchmarks:
             host_file = f"./simgrid_topo/crossbar_{np}.txt"
             benchmark_file = f"./bin/{bench}.A.{np}"
             file_name = f"--log=chaix.app:splitfile:1000000000:./traf_mat/sample_{np}_{bench}.A.{np}_trace_%.csv"
+            log_file = f"./traf_log/sample_{bench}_A_{np}.log"
             cmd = [
                 "smpirun",
                 "--cfg=smpi/privatize_global_variables:yes",
@@ -22,6 +23,7 @@ for bench in benchmarks:
                 "--log=chaix.fmt:%m%n",
                 file_name
             ]
-            subprocess.run(cmd)
+            with open(log_file, "w") as outf:
+                subprocess.run(cmd, stdout=outf)
         else:
             print(f"{file_path} is not existed")
